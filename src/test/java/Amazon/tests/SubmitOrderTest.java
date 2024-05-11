@@ -42,20 +42,20 @@ public void submitOrder(HashMap <String,String> input) throws IOException {
 		OrderCart ordercart = new OrderCart(driver);
 		Boolean match = ordercart.orderPage(productName);
 		Assert.assertTrue(match);
+		System.out.println("Develop Branch");
 	}
-	
 	public String getScreensShot(String testCaseName) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir"+"//reports"+testCaseName + ".png"));
 		FileUtils.copyFile(source, file);
 		return System.getProperty("user.dir"+"//reports"+testCaseName + ".png");
+		
 	}
 	@DataProvider
 	public Object[][] getdata() throws IOException {
-		
-		List<HashMap<String, String>> data = getDataJsonToMap(System.getProperty("user.dir")+"\\src\\test\\java\\Amazon\\data\\PurchaseOrder.json");
-		
+		List<HashMap<String, String>> data = getDataJsonToMap(System.getProperty("user.dir")+
+				"\\src\\test\\java\\Amazon\\data\\PurchaseOrder.json");
 		data.get(0);
 		data.get(1);
 		return new Object[][] {{data.get(0)},{data.get(1)}};
