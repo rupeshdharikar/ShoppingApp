@@ -51,6 +51,11 @@ public void submitOrder(HashMap <String,String> input) throws IOException {
 		FileUtils.copyFile(source, file);
 		return System.getProperty("user.dir"+"//reports"+testCaseName + ".png");
 	}
+	@Test
+	public void run(){
+		System.out.println("Hi I have updated in Duplicate workspace");
+		System.out.println("Hi I am running GitHub");
+	}
 	@DataProvider
 	public Object[][] getdata() throws IOException {
 		
